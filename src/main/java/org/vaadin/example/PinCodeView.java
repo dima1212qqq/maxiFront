@@ -1,5 +1,8 @@
 package org.vaadin.example;
 
+import com.vaadin.flow.theme.lumo.LumoUtility;
+
+import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.ScrollOptions;
 import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.button.Button;
@@ -45,7 +48,7 @@ public class PinCodeView extends VerticalLayout {
                 int digit = row * 3 + col + 1;
 
                 if (digit > 9) {
-                    if (row == 3 && col == 1) digit = 0;
+                    if (row == 3 && col == 1);
                     else {
                         Button digit0 = new Button("0");
                         digit0.addClickListener(e -> appendDigit(0));
@@ -65,9 +68,8 @@ public class PinCodeView extends VerticalLayout {
             }
             keypadLayout.add(rowLayout);
             keypadLayout.setAlignItems(Alignment.CENTER);
+keypadLayout.addClassNames(LumoUtility.Padding.MEDIUM);
         }
-        HorizontalLayout rowLayout = new HorizontalLayout();
-
         add(keypadLayout);
 
         Button clearButton = new Button("Очистить");
@@ -81,6 +83,7 @@ public class PinCodeView extends VerticalLayout {
         submitButton.addThemeVariants(ButtonVariant.LUMO_SUCCESS);
         submitButton.setWidth("150px");
         submitButton.setHeight("50px");
+        submitButton.addClickShortcut(Key.ENTER);
 
         add(new HorizontalLayout(clearButton, submitButton));
     }
@@ -133,4 +136,3 @@ public class PinCodeView extends VerticalLayout {
         pinField.setValue("*".repeat(pinBuilder.length()));
     }
 }
-

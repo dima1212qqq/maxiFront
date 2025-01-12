@@ -1,4 +1,4 @@
-package org.vaadin.example;
+package ru.dovakun.dovapay;
 
 import com.vaadin.flow.component.button.testbench.ButtonElement;
 import com.vaadin.flow.component.html.testbench.ParagraphElement;

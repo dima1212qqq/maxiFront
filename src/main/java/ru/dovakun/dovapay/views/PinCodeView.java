@@ -1,13 +1,12 @@
-package org.vaadin.example;
+package ru.dovakun.dovapay.views;
 
+import com.vaadin.flow.component.UI;
 import com.vaadin.flow.theme.lumo.LumoUtility;
 
 import com.vaadin.flow.component.Key;
-import com.vaadin.flow.component.ScrollOptions;
 import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
-import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.notification.NotificationVariant;
@@ -116,6 +115,7 @@ keypadLayout.addClassNames(LumoUtility.Padding.MEDIUM);
             notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
             notification.open();
             notification.setDuration(1000);
+            UI.getCurrent().navigate("main");
 
         } else {
             Notification notification = new Notification();
